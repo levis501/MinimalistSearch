@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="17dp"
         android:layout_toLeftOf="@id/clearSearchBoxButton"
-        android:ems="10"
+        android:imeOptions="flagNoExtractUi"
         android:inputType="text" />
 
     <Button
