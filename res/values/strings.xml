@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Minimalist Search</string>
+    <string name="firstCredit">Magnifying glass icon courtesy of Deelight</string>
+    <string name="firstCreditURL">http://openclipart.org/detail/2202/magnifying-glass-by-deelight</string>
+    <string name="secondCredit">Code by Steven Levis</string>
+    <string name="secondCreditURL"></string>
+    <string name="search">Search</string>
+
+</resources>

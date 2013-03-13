@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/clearSearchBoxButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="17dp"
+        android:layout_toLeftOf="@id/clearSearchBoxButton"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/clearSearchBoxButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/xbutton" />
+    
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/searchBox"
+        android:layout_alignRight="@id/searchBox"
+        android:text="@string/search" />
+    
+    <TextView
+        android:id="@+id/firstCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_below="@id/searchButton"
+        android:layout_marginTop="17dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="@string/firstCredit"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/firstCreditURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstCredit"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="14dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="@string/firstCreditURL"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/secondCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstCreditURL"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="88dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="@string/secondCredit"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/secondCreditURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondCredit"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="14dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="@string/secondCreditURL"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+</RelativeLayout>
