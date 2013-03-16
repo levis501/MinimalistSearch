@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onResume() {
+		mSearchBox.setText("");
 		this.getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 
 		
