@@ -7,5 +7,7 @@
     <string name="secondCredit">Code by Steven Levis</string>
     <string name="secondCreditURL">http://levis501.github.com/MinimalistSearch</string>
     <string name="search">Search</string>
+    <string name="paste">Paste</string>
+    <string name="pasteAndSearch">Paste and Search</string>
 
 </resources>
