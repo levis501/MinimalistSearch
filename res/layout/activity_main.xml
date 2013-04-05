@@ -26,18 +26,7 @@
         android:layout_marginRight="17dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/xbutton" />
-    
-    <!-- <Button
-        android:id="@+id/searchButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/searchBox"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_alignLeft="@id/searchBox"
-        android:layout_alignRight="@id/searchBox"
-        android:text="@string/search" />   -->
-        
+            
     <LinearLayout 
         android:id="@+id/searchButtons"
         android:layout_width="match_parent"
