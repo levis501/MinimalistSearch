@@ -1,9 +1,13 @@
 package com.stevenlevis.minimalistsearch;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.util.Log;
@@ -17,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 @SuppressWarnings("deprecation")
@@ -27,6 +32,8 @@ public class MainActivity extends Activity {
 	private ImageButton mSearchButton;
 	private ImageButton mPasteAndSearchButton;
 	private ImageButton mPasteButton;
+	private ImageButton mLuckySearchButton;
+	private ImageButton mPasteAndLuckySearchButton;
 
 	private void launchSearch() {
 		String action = Intent.ACTION_WEB_SEARCH;
@@ -34,6 +41,22 @@ public class MainActivity extends Activity {
 		Intent searchIntent = new Intent(action);
 		searchIntent.putExtra(SearchManager.QUERY, query);
 		startActivity(searchIntent);
+	}
+	
+	private void launchLuckySearch() {
+		String query;
+		try {
+			query = URLEncoder.encode(mSearchBox.getText().toString(), "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			Toast toast = Toast.makeText(this, "Error encoding request.  Please contact the developer.", Toast.LENGTH_LONG);
+			toast.show();
+			return;
+		}
+		String url = "http://google.com/search?btnI=1&q=" + query;
+		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+		startActivity(browserIntent);
+
 	}
 	
 	private boolean insertClipboardTextAtSearchCursor() {
@@ -67,6 +90,7 @@ public class MainActivity extends Activity {
 		        }
 				return false;
 			}});
+
 		mSearchButton = (ImageButton) findViewById(R.id.searchButton);
 		mSearchButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -93,6 +117,25 @@ public class MainActivity extends Activity {
 			}
 		});
 		
+		mLuckySearchButton = (ImageButton) findViewById(R.id.luckySearchButton);
+		mLuckySearchButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				launchLuckySearch();
+			}
+		});
+		
+		mPasteAndLuckySearchButton = (ImageButton) findViewById(R.id.pasteAndLuckySearchButton);
+		mPasteAndLuckySearchButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (insertClipboardTextAtSearchCursor()) {
+					launchLuckySearch();
+				}
+			}
+		});
+		
+				
 		mClearSearchBoxButton = (Button) findViewById(R.id.clearSearchBoxButton);
 		mClearSearchBoxButton.setOnClickListener( new OnClickListener() {
 			

@@ -9,5 +9,7 @@
     <string name="search">Search</string>
     <string name="paste">Paste</string>
     <string name="pasteAndSearch">Paste and Search</string>
-
+    <string name="luckySearch">Lucky Search</string>
+    <string name="pasteAndLuckySearch">Paste and Lucky Search</string>
+    
 </resources>
