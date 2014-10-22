@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
 		String query = mSearchBox.getText().toString();
 		Intent searchIntent = new Intent(action);
 		searchIntent.putExtra(SearchManager.QUERY, query);
+		searchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(searchIntent);
 	}
 	
@@ -55,6 +56,7 @@ public class MainActivity extends Activity {
 		}
 		String url = "http://google.com/search?btnI=1&q=" + query;
 		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+		browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(browserIntent);
 
 	}
